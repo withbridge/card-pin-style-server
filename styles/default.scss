@@ -1,0 +1,553 @@
+// Variables
+$en-partner-header-content: ""; // intentionally blank
+$en-partner-sub-header-content: ""; // intentionally blank
+$en-partner-instructions-content: ""; // intentionally blank
+$en-set-pin-label-content: ""; // intentionally blank
+$en-set-pin-placeholder: "PIN";
+$en-set-pin-confirm-label-content: ""; // intentionally blank
+$en-set-pin-confirm-placeholder: "Re-enter PIN";
+$en-submit-button-content: "Submit";
+$en-success-instructions: ""; // intentionally blank
+
+$es-partner-header-content: ""; // intentionally blank
+$es-partner-sub-header-content: ""; // intentionally blank
+$es-partner-instructions-content: ""; // intentionally blank
+$es-set-pin-label-content: ""; // intentionally blank
+$es-set-pin-placeholder: "PIN";
+$es-set-pin-confirm-label-content: ""; // intentionally blank
+$es-set-pin-confirm-placeholder: "Re-enter PIN";
+$es-submit-button-content: "Submit";
+$es-success-instructions: ""; // intentionally blank
+
+$fr-partner-header-content: ""; // intentionally blank
+$fr-partner-sub-header-content: ""; // intentionally blank
+$fr-partner-instructions-content: ""; // intentionally blank
+$fr-set-pin-label-content: ""; // intentionally blank
+$fr-set-pin-placeholder: "PIN";
+$fr-set-pin-confirm-label-content: ""; // intentionally blank
+$fr-set-pin-confirm-placeholder: "Re-enter PIN";
+$fr-submit-button-content: "Submit";
+$fr-success-instructions: ""; // intentionally blank
+
+// Core colors
+$color-white: #ffffff;
+$color-black: #000000;
+$color-sky-blue: #40cfff;
+
+// Neutral palette
+$color-neutral-100: #eee;
+$color-neutral-200: #ddd;
+$color-neutral-300: #ccc;
+$color-neutral-400: #b7b7b7;
+$color-neutral-500: #9b9b9b;
+$color-neutral-600: #666;
+$color-neutral-700: #4d4d4d;
+$color-neutral-800: #222;
+$color-neutral-900: #111;
+
+// System colors
+$color-success: #027a48;
+$color-success-light: #ecfdf3;
+$color-error: #b42318;
+$color-error-light: #fef3f2;
+$color-focus: rgba(79, 70, 229, 1);
+
+// Semantic colors
+$text-primary: $color-black;
+$text-secondary: $color-neutral-600;
+$text-alternate: $color-white;
+$text-success: $color-success;
+$text-error: $color-error;
+
+$bg-primary: $color-white;
+$bg-secondary: $color-neutral-100;
+$bg-alternate: $color-black;
+$bg-success: $color-success-light;
+$bg-error: $color-error-light;
+
+$border-primary: $color-black;
+$border-secondary: $color-neutral-400;
+$border-alternate: $color-white;
+
+$link-primary: $color-black;
+$link-secondary: $color-neutral-400;
+$link-alternate: $color-white;
+
+// Legacy variables for compatibility
+$body-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$body-font-size: 15px;
+$body-text-color: $text-primary;
+$body-background-color: $bg-secondary;
+
+$h1-font-size: 2em;
+$h1-font-weight: bold;
+$h1-font-color: $body-text-color;
+$h1-font-style: normal;
+
+$h2-font-size: 1.5em;
+$h2-font-weight: bold;
+$h2-font-color: $body-text-color;
+$h2-font-style: normal;
+
+$label-font-color: $color-neutral-700;
+$label-font-size: 14px;
+$label-font-weight: 500;
+$label-font-style: normal;
+
+$control-font-size: 16px;
+$control-font-style: normal;
+$control-font-weight: normal;
+$control-font-color: $text-primary;
+
+$control-error-font-size: 14px;
+$control-error-font-style: normal;
+$control-error-font-weight: normal;
+$control-error-font-color: $text-error;
+
+$placeholder-font-color: $color-neutral-400;
+$placeholder-font-size: 16px;
+$placeholder-font-weight: normal;
+$placeholder-font-style: normal;
+
+$button-font-color: $text-alternate;
+$button-font-size: 16px;
+$button-font-weight: 500;
+$button-font-style: normal;
+$button-background-color: $bg-alternate;
+$button-border-color: $bg-alternate;
+
+$button-hover-font-color: $text-alternate;
+$button-hover-font-size: 16px;
+$button-hover-font-style: normal;
+$button-hover-font-weight: 500;
+$button-hover-background-color: $color-neutral-700;
+$button-hover-border-color: $color-neutral-700;
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $body-font-family;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: $bg-secondary;
+  color: $text-primary;
+  font-size: $body-font-size;
+}
+
+/* Layout */
+.d-flex {
+  display: flex;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+
+  &.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+  }
+}
+
+#pnl-messages {
+  width: 100%;
+}
+
+/* Alert styling */
+.alert,
+.alert-dismissable {
+  border-radius: 8px !important;
+  padding: 16px !important;
+  margin-bottom: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1) !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+
+  &.alert-danger {
+    background-color: $bg-error !important;
+    color: $text-error !important;
+  }
+
+  &.alert-success {
+    background-color: $bg-success !important;
+    color: $text-success !important;
+  }
+}
+
+button.close {
+  background: transparent !important;
+  border: none !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  opacity: 0.7 !important;
+  transition: opacity 0.2s !important;
+  margin-left: 10px !important;
+
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+/* Form field errors styling */
+ul.errors {
+  list-style-type: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  background-color: $bg-error;
+  color: $text-error;
+  border-radius: 4px;
+  border-left: 3px solid $color-error;
+
+  li {
+    font-size: 14px;
+  }
+}
+
+/* Page-specific styling */
+body {
+
+  &#direct-pin-success,
+  &#direct-pin {
+    padding-top: 52px !important; // Space for navbar
+
+    #pnl-messages {
+      position: relative !important;
+      z-index: 10 !important;
+      margin-bottom: -65px !important;
+    }
+
+    .interior {
+      position: relative !important;
+      z-index: 5 !important;
+    }
+  }
+
+  &#direct-pin-success .interior,
+  &#direct-pin #pnl-messages+.interior {
+    padding-top: 80px !important;
+    margin-top: 10px !important;
+  }
+}
+
+/* Form container */
+.interior {
+  background-color: $bg-primary;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+  width: 100%;
+}
+
+/* Text styles */
+p {
+  font-size: 15px;
+  line-height: 1.5;
+  color: $text-secondary;
+  margin-bottom: 24px;
+}
+
+/* Form elements */
+.form-group {
+  margin: 12px 0;
+  position: relative;
+}
+
+.lbl-pin {
+  display: block;
+  font-size: $label-font-size;
+  font-weight: $label-font-weight;
+  margin-bottom: 8px;
+  color: $label-font-color;
+}
+
+.form-control {
+  width: 100%;
+  height: 48px;
+  border: 1px solid $border-secondary;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: $control-font-size;
+  letter-spacing: 0.2em;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-focus;
+    border-width: 2px;
+  }
+}
+
+/* Button styles */
+.btn {
+  display: block;
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+
+  &-primary {
+    position: relative;
+    background-color: $button-background-color;
+    color: $button-font-color;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+
+    &:hover {
+      background-color: $button-hover-background-color;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+/* Placeholder styles */
+::placeholder {
+  color: $placeholder-font-color;
+  opacity: 1;
+  letter-spacing: normal;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .interior {
+    padding: 24px;
+  }
+
+  .container {
+    padding: 16px;
+  }
+
+  body {
+
+    &#direct-pin-success .interior,
+    &#direct-pin #pnl-messages+.interior {
+      padding-top: 70px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .interior {
+    padding: 20px;
+    box-shadow: none;
+  }
+
+  .form-control,
+  .btn-primary {
+    height: 44px;
+  }
+
+  body {
+
+    &#direct-pin-success .interior,
+    &#direct-pin #pnl-messages+.interior {
+      padding-top: 60px;
+    }
+  }
+
+  .alert {
+    padding: 12px;
+  }
+}
+
+// Content (default en)
+body {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $en-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $en-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $en-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $en-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $en-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $en-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $en-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $en-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $en-success-instructions;
+      }
+    }
+  }
+}
+
+body.lang-es {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $es-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $es-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $es-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $es-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $es-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $es-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $es-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $es-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $es-success-instructions;
+      }
+    }
+  }
+}
+
+body.lang-fr {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $fr-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $fr-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $fr-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $fr-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $fr-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $fr-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $fr-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $fr-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $fr-success-instructions;
+      }
+    }
+  }
+}

@@ -1,0 +1,337 @@
+// Default style file used by Bridge
+// This is provided as a reference for new stylesheets and should not be direclty modified
+
+$en-partner-header-content: "";
+$en-partner-sub-header-content: "";
+$en-partner-instructions-content: "Please use the form below to set your PIN";
+$en-set-pin-label-content: "Please enter your PIN";
+$en-set-pin-placeholder: "PIN";
+$en-set-pin-confirm-label-content: "Please re-enter your PIN";
+$en-set-pin-confirm-placeholder: "Re-enter PIN";
+$en-submit-button-content: "Submit";
+$en-success-instructions: "";
+
+$es-partner-header-content: "";
+$es-partner-sub-header-content: "";
+$es-partner-instructions-content: "Please use the form below to set your PIN";
+$es-set-pin-label-content: "Please enter your PIN";
+$es-set-pin-placeholder: "PIN";
+$es-set-pin-confirm-label-content: "Please re-enter your PIN";
+$es-set-pin-confirm-placeholder: "Re-enter PIN";
+$es-submit-button-content: "Submit";
+$es-success-instructions: "";
+
+$fr-partner-header-content: "";
+$fr-partner-sub-header-content: "";
+$fr-partner-instructions-content: "Please use the form below to set your PIN";
+$fr-set-pin-label-content: "Please enter your PIN";
+$fr-set-pin-placeholder: "PIN";
+$fr-set-pin-confirm-label-content: "Please re-enter your PIN";
+$fr-set-pin-confirm-placeholder: "Re-enter PIN";
+$fr-submit-button-content: "Submit";
+$fr-success-instructions: "";
+
+$body-font-family: Arial, Helvetica, sans-serif;
+$body-font-size: 12px;
+$body-text-color: #000000;
+$body-background-color: #ffffff;
+
+$h1-font-size: 2em;
+$h1-font-weight: bold;
+$h1-font-color: $body-text-color;
+$h1-font-style: normal;
+
+$h2-font-size: 1.5em;
+$h2-font-weight: bold;
+$h2-font-color: $body-text-color;
+$h2-font-style: normal;
+
+$label-font-color: $body-text-color;
+$label-font-size: 1em;
+$label-font-weight: normal;
+$label-font-style: normal;
+
+$control-font-size: 1.5em;
+$control-font-style: normal;
+$control-font-weight: normal;
+$control-font-color: #000000;
+
+$control-error-font-size: 1em;
+$control-error-font-style: normal;
+$control-error-font-weight: bold;
+$control-error-font-color: #ff0000;
+
+$placeholder-font-color: #cccccc;
+$placeholder-font-size: 1em;
+$placeholder-font-weight: normal;
+$placeholder-font-style: normal;
+
+$button-font-color: #fff;
+$button-font-size: 1rem;
+$button-font-weight: normal;
+$button-font-style: normal;
+$button-background-color: #007bff;
+$button-border-color: #007bff;
+
+$button-hover-font-color: #fff;
+$button-hover-font-size: 1rem;
+$button-hover-font-style: normal;
+$button-hover-font-weight: normal;
+$button-hover-background-color: #00448b;
+$button-hover-border-color: #00448b;
+
+// Main Styles
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  background: $body-background-color;
+
+  h1 {
+    font-size: $h1-font-size;
+    font-style: $h1-font-style;
+    font-weight: $h1-font-weight;
+    color: $h1-font-color;
+  }
+
+  h2 {
+    font-size: $h2-font-size;
+    font-style: $h2-font-style;
+    font-weight: $h2-font-weight;
+    color: $h2-font-color;
+  }
+
+  main {
+    form {
+      .ctl-pin {
+        -webkit-text-security: disc;
+        font-size: $control-font-size;
+        font-style: $control-font-style;
+        font-weight: $control-font-weight;
+        color: $control-font-color;
+
+        &::placeholder {
+          // Placeholder text injected via JavaScript to allow it to be set from SCSS file
+          font-size: $placeholder-font-size;
+          font-style: $placeholder-font-style;
+          font-weight: $placeholder-font-weight;
+          color: $placeholder-font-color;
+        }
+      }
+
+      .lbl-pin {
+        font-size: $label-font-size;
+        font-style: $label-font-style;
+        font-weight: $label-font-weight;
+        color: $label-font-color;
+      }
+
+      ul.errors {
+        padding-left: 12px;
+        font-size: $control-error-font-size;
+        font-style: $control-error-font-style;
+        font-weight: $control-error-font-weight;
+        color: $control-error-font-color;
+      }
+
+      #btn-submit {
+        color: $button-font-color;
+        font-size: $button-font-size;
+        font-weight: $button-font-weight;
+        font-style: $button-font-style;
+        background-color: $button-background-color;
+        border-color: $button-border-color;
+
+        &:hover,
+        &:active {
+          color: $button-hover-font-color;
+          font-size: $button-hover-font-size;
+          font-weight: $button-hover-font-weight;
+          font-style: $button-hover-font-style;
+          background-color: $button-hover-background-color;
+          border-color: $button-hover-border-color;
+        }
+      }
+    }
+  }
+}
+
+// Content (default en)
+body {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $en-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $en-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $en-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $en-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $en-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $en-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $en-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $en-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $en-success-instructions;
+      }
+    }
+  }
+}
+
+body.lang-es {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $es-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $es-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $es-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $es-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $es-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $es-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $es-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $es-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $es-success-instructions;
+      }
+    }
+  }
+}
+
+body.lang-fr {
+  main {
+    h1#partner-header {
+      &:before {
+        content: $fr-partner-header-content;
+      }
+    }
+
+    h2#partner-sub-header {
+      &:before {
+        content: $fr-partner-sub-header-content;
+      }
+    }
+
+    p#partner-instructions {
+      &:before {
+        content: $fr-partner-instructions-content;
+      }
+    }
+
+    form {
+      #lbl-set-pin {
+        &:before {
+          content: $fr-set-pin-label-content;
+        }
+      }
+
+      #ctl-set-pin-placeholder-text {
+        &:before {
+          content: $fr-set-pin-placeholder;
+        }
+      }
+
+      #lbl-confirm-set-pin {
+        &:before {
+          content: $fr-set-pin-confirm-label-content;
+        }
+      }
+
+      #ctl-confirm-set-pin-placeholder-text {
+        &:before {
+          content: $fr-set-pin-confirm-placeholder;
+        }
+      }
+
+      #btn-submit {
+        &:before {
+          content: $fr-submit-button-content;
+        }
+      }
+    }
+
+    p#success-instructions {
+      &:before {
+        content: $fr-success-instructions;
+      }
+    }
+  }
+}
